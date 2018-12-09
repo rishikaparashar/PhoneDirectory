@@ -33,7 +33,7 @@ public class ContactFrame extends javax.swing.JFrame {
         Connection conn = null;
         try {
             String USERNAME = "root";
-            String PASSWORD = "Welcome@123";
+            String PASSWORD = "Rishika@15";
             String CONN_STRING = "jdbc:mysql://localhost:3306/PhoneDirectory?autoReconnect=true&useSSL=false";
             conn = DriverManager.getConnection(CONN_STRING, USERNAME, PASSWORD);
             System.out.println("Connected!!");
@@ -488,7 +488,7 @@ public class ContactFrame extends javax.swing.JFrame {
     private void deleteContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteContactActionPerformed
         try {
             int row = jTable1.getSelectedRow();
-            if (row > 0) {
+            if (row > -1) {
                 Connection conn = connect();
                 String id = jTable1.getModel().getValueAt(row, 0).toString();
                 //String mname = jTable1.getModel().getValueAt(row, 1).toString();
@@ -515,7 +515,7 @@ public class ContactFrame extends javax.swing.JFrame {
         try {
             jPanel1.setVisible(true);
             int selectedRow = jTable1.getSelectedRow();
-            if (selectedRow > 0) {
+            if (selectedRow > -1) {
                 String id = jTable1.getModel().getValueAt(selectedRow, 0).toString();
                 String modify_type = null;
                 Object selectedType = jComboBox1.getSelectedItem();
